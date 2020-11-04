@@ -4,8 +4,8 @@ notes:
 
 * There are plugins at the end without descriptions: what are these? Why do we also have Funding and Voting Power in V2?
 * could someone confirm the contract for snglsDAO [**https://github.com/SingularDTV/snglsDAO-smartcontracts/blob/master/dao-contracts/contracts/schemes/LockingSGT4Reputation.sol**](https://github.com/SingularDTV/snglsDAO-smartcontracts/blob/master/dao-contracts/contracts/schemes/LockingSGT4Reputation.sol)
-* We should probably have links to each of these contracts so people can dig in
-  *  [https://github.com/daostack/arc/tree/master/contracts/schemes](https://github.com/daostack/arc/tree/master/contracts/schemes)
+* We should probably have links to each of these contracts
+  * from here maybe: 
 
 | **Plugin Name** | **V1 or V2**               | Description | **Status** |
 | :--- | :--- | :--- | :--- |

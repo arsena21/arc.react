@@ -1,7 +1,5 @@
 # Querying the Subgraph
 
-The full list of Subgraph Entities cached by DAOstack subgraph can be found [here](https://subgraph.daostack.io/). You can find all of the subgraph entities [here](https://github.com/daostack/DAOstack-Hackers-Kit/blob/master/docs/stack/subgraph/entities.md%20).
-
 ## Query for single Entity
 
 When you query for single Entity with all/some fields, you need to provide the Entity id.

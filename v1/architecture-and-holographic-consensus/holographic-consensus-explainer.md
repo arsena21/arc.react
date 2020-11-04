@@ -2,7 +2,7 @@
 
 ## Holographic Consensus Explainer
 
-Genesis Protocol is a voting machine implemented by the DAOstack team called Holographic Consensus for scaling decisions within decentralized organizations. You can find details on our design principles [here](https://medium.com/daostack/holographic-consensus-part-1-116a73ba1e1c), as well as an explainer video by Matan Field [here](https://www.youtube.com/watch?v=1De0MoStSkY&ab_channel=DappConBerlin). 
+Genesis Protocol is a voting machine implemented by the DAOstack team called Holographic Consensus for scaling decisions within decentralized organizations. You can find details on our design principles [here](https://medium.com/daostack/holographic-consensus-part-1-116a73ba1e1c).
 
 ### Quick Overview
 

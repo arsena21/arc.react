@@ -14,7 +14,7 @@ The main components of our stack include:
 
 [Infra](https://github.com/daostack/infra) is a Solidity smart contract library containing the core building blocks of our protocol. It has two main components:
 
-* Voting Machines - A voting machine is a universal contract which can operate the voting process for any organization. Each voting machine follows its own predefined rules for the decision making and execution process. Rules for voting machines can be implemented for any voting process, from a simple protocol like an absolute majority vote \(where 51% of the voting power should approve it in order for the decision to pass\), or more sophisticated protocols like the Holographic Consensus voting protocol. All DAOs on DAOstack are currently using Holographic Consensus.
+* Voting Machines - A voting machine is a universal contract which can operate the voting process for any organization. Each voting machine follows its own predefined rules for the decision making and execution process. Rules for voting machines can be implemented for any voting process, from a simple protocol like an absolute majority vote \(where 51% of the voting power should approve it in order for the decision to pass\), or more sophisticated protocols like the [Holographic Consensus](https://www.youtube.com/watch?v=1De0MoStSkY) voting protocol. All DAOs on DAOstack are currently using Holographic Consensus.
 * Voting Rights Management - A voting rights management system determines how voting rights are distributed. Any voting rights management system must have "balances" which represents the voting power each participant holds. Currently, DAOs on DAOstack use reputation based voting rights. Reputation can be minted / burned via proposals, or it can be issued to people according to some other mechanisms \(like the number of tokens locked in an interface, like what [NecDAO](http://stake.nectar.community) did\).
 
 Although we encourage and would love contributions at this layer of the stack, most developers don’t dig this deep. If you do want to create a new Voting Machine or Voting Rights Management system, contact us and we can point you in the right direction!
@@ -39,18 +39,6 @@ _\* Please note that the Ganache addresses are based on the DAOstack commands fo
 Using Arc is not necessary to deploy a DAO, but you might want to work on this layer if you need your DAO to have a unique action, constraint, or voting process that is not yet implemented on Arc.
 
 You can find the complete Arc docs here: [https://daostack.github.io/arc](https://daostack.github.io/arc)
-
-## Client
-
-Client is a library that facilitates access to Arc contracts without having to directly interact with the Ethereum blockchain. It provides functions to interact with DAOstack contracts to vote, propose, stake and execute proposals.
-
-Client library is also a wrapper around [DAOstack subgraph](https://github.com/daostack/sugbraph). It enable developers to interact with subgraph and execute various generic graph queries to access proposals, daos and other complex entities
-
-Using Client, JavaScript/TypeScript developers can easily write scripts or applications which can interact with existing DAOs, submit proposals to DAOs, vote and stake on proposals, execute the resulting decisions, manage agent reputations. This is particularly helpful for developers who want to get the advantages of decentralized governance on the blockchain without dealing directly with a smart contract language.
-
-#### Should I work at this level?
-
-You should use Client whenever you want to use JavaScript or TypeScript to interact with Arc contracts for voting, proposing etc or to execute generic GraphQL queries on subgraph for accessing blockchain data. If you are interacting with custom Arc contracts or custom subgraph, then you might have to write your own Web3 library to interact with contracts and/or query the subgraph.
 
 ## Subgraph
 
