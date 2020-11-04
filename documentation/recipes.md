@@ -4,7 +4,7 @@ Here are some tricks that you can do when using the library. All these have been
 
 ## Showing members with their reputation percentage
 
-```html
+```markup
 <DAO address="0x">
   <Members from="DAO">
     <DAO.Data>
@@ -27,7 +27,7 @@ Here are some tricks that you can do when using the library. All these have been
 
 In this example we are going to show the latest **active** proposals from the DAO, and make a button to vote for them. NOTE: The user must be logged in otherwise the vote will fail
 
-```tsx
+```text
 const activeProposals = {
   where: { stage_in: [2, 3, 4, 5] },
   orderBy: "closingAt",
@@ -55,7 +55,7 @@ const activeProposals = {
 
 ## Showing the percentage of votes against a proposal
 
-```tsx
+```text
 const showPercentage = (votes: BN, totalRep: BN) => {
   return votes
     .muln(100)
@@ -76,3 +76,4 @@ const showPercentage = (votes: BN, totalRep: BN) => {
   </Proposal>
 </DAO>
 ```
+

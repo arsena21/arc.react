@@ -4,11 +4,11 @@
 
 `App.tsx`
 
-```tsx
+```text
 const configuration = new ArcConfig("private");
 ```
 
-```html
+```markup
 <Arc config={configuration}>
   <DAO address="0x...">
     <ExampleDAOView />
@@ -19,7 +19,7 @@ const configuration = new ArcConfig("private");
 Now that the DAO component has been added to the root of our application, any component rendered within its tree will have access to this DAO's contexts.  
 `ExampleDAOView.tsx`
 
-```html
+```markup
 ExampleDAOView() => (
   <DAO.Data>
   {(data: DAOData) => (
@@ -34,7 +34,7 @@ ExampleDAOView() => (
 
 You can also interact with the entity context, which enables write operations to the protocol:
 
-```html
+```markup
 <DAO.Entity>
   {(entity: DAOEntity) => ( <button onClick={async (e) => { await
   entity.createProposal(...) }} /> )}
@@ -43,7 +43,7 @@ You can also interact with the entity context, which enables write operations to
 
 ## Example 2: Component Context Inference
 
-```html
+```markup
 <DAO address="0xMy_DAO">
   ...
   <Member address="0xMy_Address" from="DAO">
@@ -55,7 +55,7 @@ You can also interact with the entity context, which enables write operations to
 
 **VS**
 
-```html
+```markup
 <Member address="0xMy_Address" dao="0xMy_DAO"> </Member>
 ```
 
@@ -63,7 +63,7 @@ You can also interact with the entity context, which enables write operations to
 
 ## Example 3: Component Lists
 
-```html
+```markup
 <DAOs>
   <DAO.Data>
   {(dao: DAOData) => (
@@ -78,7 +78,7 @@ You can also interact with the entity context, which enables write operations to
 
 ## Example 4: Context Forwarding
 
-```html
+```markup
 <DAO.Data>
 <Member.Data>
 {(dao: DAOData, member: MemberData) => (
@@ -95,13 +95,13 @@ You can also interact with the entity context, which enables write operations to
 
 The below example will:
 
-- Render a list of all DAOs. For each DAO...
-  - Print the DAO's name.
-  - Render a list of all Members. For each member...
-    - Print the Member's information.
-    - Provide a button that allows you to propose a reward for that member.
+* Render a list of all DAOs. For each DAO...
+  * Print the DAO's name.
+  * Render a list of all Members. For each member...
+    * Print the Member's information.
+    * Provide a button that allows you to propose a reward for that member.
 
-```html
+```markup
 <DAOs>
   <DAO.Data>
   {(dao: DAOData) => (
@@ -127,3 +127,4 @@ The below example will:
   </Members>
 </DAOs>
 ```
+

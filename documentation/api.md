@@ -2,13 +2,13 @@
 
 ## Recommended Readings
 
-We recommend reading the [architecture](./architecture.md) & [examples](./examples.md) before this document.
+We recommend reading the [architecture](architecture.md) & [examples](examples.md) before this document.
 
 ## Protocol Connection
 
-First, you must connect to the Arc protocol using an [`ArcConfig`](../src/protocol/ArcConfig.ts) object like so:
+First, you must connect to the Arc protocol using an [`ArcConfig`](https://github.com/arsena21/arc.react/tree/b197cb641f78188cc58f50eccd3df68369f03d5d/src/protocol/ArcConfig.ts) object like so:
 
-```tsx
+```text
 import { Arc, ArcConfig } from "@daostack/daocomponents";
 
 const App = () => (
@@ -18,15 +18,15 @@ const App = () => (
 
 Supported networks:
 
-- mainnet
-- rinkeby
-- kovan
-- xdai
-- private
+* mainnet
+* rinkeby
+* kovan
+* xdai
+* private
 
 In order to send transactions, you need to connect your `web3 provider`. Here's an example assuming Metamask in the browser:
 
-```ts
+```typescript
 import { networkSettings } from "@daostack/arc.react";
 
 // Get the default configuration settings for the
@@ -48,7 +48,7 @@ arcConfig.initialize();
 
 You can also pass in your own configuration values like so:
 
-```ts
+```typescript
 import { ArcSettings } from "@daostack/arc.react";
 
 const settings: ArcSettings = {
@@ -62,28 +62,26 @@ const arcConfig = new ArcConfig(settings);
 arcConfig.initialize();
 ```
 
----
-
 ## Components
 
-You can use every class that is an entity (a.k.a. extends from the Entity class in [Arc.js library](https://github.com/daostack/arc.js)) as a react component.
+You can use every class that is an entity \(a.k.a. extends from the Entity class in [Arc.js library](https://github.com/daostack/arc.js)\) as a react component.
 
-```ts
+```typescript
 //Every component accepts the following props:
 noSub: boolean;
 ```
 
-The function of the `noSub` prop is that you can make that a component does not subscribes to changes (of data on the chain)
+The function of the `noSub` prop is that you can make that a component does not subscribes to changes \(of data on the chain\)
 
 ### DAO
 
-```ts
+```typescript
 Props needed:
 
 address: string // dao address
 ```
 
-```html
+```markup
 <DAO address='0x'>
   <DAO.Data>
     {(dao: DAOData) => <div> Name: {dao.name} </div>})
@@ -93,14 +91,14 @@ address: string // dao address
 
 ### Member
 
-```ts
+```typescript
 Props needed without infer:
 
 address: string; //member address
 dao: string; //dao address
 ```
 
-```html
+```markup
 <Member address="0x" dao="0x">
   <Member.Data>
     {(member: MemberData) =>
@@ -110,13 +108,13 @@ dao: string; //dao address
 </Member>
 ```
 
-```ts
+```typescript
 Props needed using infer:
 
 address: string; //member address
 ```
 
-```html
+```markup
 <DAO>
   <Member address="0x">
     <Member.Data>
@@ -130,15 +128,15 @@ address: string; //member address
 
 ### Plugin
 
-`<Plugin>` is a generic component, but you can also use the specific plugin you would like to use, you can check which one exists [here]('../src/componenents/plugins)
+`<Plugin>` is a generic component, but you can also use the specific plugin you would like to use, you can check which one exists \[here\]\('../src/componenents/plugins\)
 
-```ts
+```typescript
 Props needed:
 
 id: string; // plugin id
 ```
 
-```html
+```markup
 <Plugin id="0x">
   <Plugin.Data>
     {(pluginInfo: PluginData) => <div> Plugin name: ${pluginInfo.name} </div> }
@@ -155,7 +153,7 @@ id: string; // plugin id
 
 Also, inferring the `Plugin` component:
 
-```html
+```markup
 <Plugin id="0x">
   <ReputationFromTokenPlugin>
     <ReputationFromTokenPlugin.Data>
@@ -169,15 +167,15 @@ Also, inferring the `Plugin` component:
 
 ### Proposal
 
-`<Proposal>` is like Plugin component, you can see the specifics proposal implemented [here]('../src/componenents/plugins) too, but you must go inside of the plugin folder to make sure the proposal type exists on that plugin
+`<Proposal>` is like Plugin component, you can see the specifics proposal implemented \[here\]\('../src/componenents/plugins\) too, but you must go inside of the plugin folder to make sure the proposal type exists on that plugin
 
-```ts
+```typescript
 Props needed
 
 id: string; // proposal id
 ```
 
-```html
+```markup
 <Proposal id="0x">
   <Proposal.Data>
     {(proposal: ProposalData) => (
@@ -189,7 +187,7 @@ id: string; // proposal id
 
 Also, inferring the `Proposal` component:
 
-```html
+```markup
 <Proposal id="0x">
   <ContributionRewardProposal>
     <ContributionRewardProposal.Data>
@@ -203,14 +201,14 @@ Also, inferring the `Proposal` component:
 
 ### Queue
 
-```ts
+```typescript
 Props needed without infer
 
 id: string; // queue id
 dao: string; // dao address
 ```
 
-```html
+```markup
 <Queue dao="0x" id="0x">
   <Queue.Data>
     {(queue: QueueData) =>
@@ -220,13 +218,13 @@ dao: string; // dao address
 </Queue>
 ```
 
-```ts
+```typescript
 Props needed using infer:
 
 id: string; // queue id
 ```
 
-```html
+```markup
 <DAO>
   <Queue address="0x">
     <Queue.Data>
@@ -240,13 +238,13 @@ id: string; // queue id
 
 ### Reputation
 
-```ts
+```typescript
 Props needed
 
 address: string; // reputation address
 ```
 
-```html
+```markup
 <Reputation address="0x">
   <Reputation.Data>
     {(reputation: ReputationData) => (
@@ -258,13 +256,13 @@ address: string; // reputation address
 
 ### Reward
 
-```ts
+```typescript
 Props needed
 
 id: string // reward id
 ```
 
-```html
+```markup
 <Reward id="0x">
   <Reward.Data>
     {(reward: RewardData) =>
@@ -276,13 +274,13 @@ id: string // reward id
 
 ### Stake
 
-```ts
+```typescript
 Props needed
 
 id: string // stake id
 ```
 
-```html
+```markup
 <Stake id="0x">
   <Stake.Data>
     {( stake: StakeData) =>
@@ -294,13 +292,13 @@ id: string // stake id
 
 ### Tag
 
-```ts
+```typescript
 Props needed:
 
 id: string; //plugin id
 ```
 
-```html
+```markup
 <Tag>
   <Tag.Data>
     {( tag: TagData) =>
@@ -312,13 +310,13 @@ id: string; //plugin id
 
 ### Token
 
-```ts
+```typescript
 Props needed using without infer:
 
 address: string; //token address
 ```
 
-```html
+```markup
 <Token address="0x">
   <Token.Data>
     {(token: TokenData) => (
@@ -328,11 +326,11 @@ address: string; //token address
 </Token>
 ```
 
-```ts
+```typescript
 Props needed using infer: None
 ```
 
-```html
+```markup
 <Token>
   <Token.Data>
     {(token: TokenData) => (
@@ -344,12 +342,12 @@ Props needed using infer: None
 
 ### Vote
 
-```ts
+```typescript
 Props needed using infer:
 id: string // vote id
 ```
 
-```html
+```markup
 <Vote id="0x">
   <Vote.Data>
     {(vote: VoteData) =>
@@ -359,15 +357,13 @@ id: string // vote id
 </Vote>
 ```
 
----
-
 ## Component Lists
 
 When you use a component that ends with `s`, you can show a list of every entity that exists, but also, you can get the sub-entities from a top level entity.
 
 For example, member has votes, so you can see all the votes that a specific member has done, using the `from` props, like this:
 
-```html
+```markup
 <Member address="0x">
   <Votes from="Member as voter">
     <Vote.Data>
@@ -383,11 +379,11 @@ Here is a list of the components that extends from `ComponentBase`, that have an
 
 ### Members
 
-```ts
+```typescript
 from?: "DAO"
 ```
 
-```html
+```markup
 <DAO address="0x">
   <Members from="DAO">
     <Member.Data>
@@ -401,11 +397,11 @@ from?: "DAO"
 
 ### Queues
 
-```ts
+```typescript
 from?: "DAO"
 ```
 
-```html
+```markup
 <DAO address="0x">
   <Queues from="DAO">
     <Queue.Data>
@@ -419,11 +415,11 @@ from?: "DAO"
 
 ### Rewards
 
-```ts
+```typescript
 from: "DAO" | "Member as beneficiary" | "Proposal" | "Token";
 ```
 
-```html
+```markup
 <Member address="0x">
   <Rewards from="Member as beneficiary">
     <Reward.Data>
@@ -437,11 +433,11 @@ from: "DAO" | "Member as beneficiary" | "Proposal" | "Token";
 
 ### Stakes
 
-```ts
+```typescript
 from: "DAO" | "Member as staker" | "Proposal";
 ```
 
-```html
+```markup
 <Proposal id="0x">
   <Stakes from="Proposal">
     <Stake.Data>
@@ -455,11 +451,11 @@ from: "DAO" | "Member as staker" | "Proposal";
 
 ### Votes
 
-```ts
+```typescript
 from: "DAO" | "Member as voter" | "Proposal";
 ```
 
-```html
+```markup
 <Proposal id="0x">
   <Votes from="Proposal">
     <Vote.Data>
@@ -471,11 +467,11 @@ from: "DAO" | "Member as voter" | "Proposal";
 
 ### Plugins
 
-```ts
+```typescript
 from?: "DAO"
 ```
 
-```html
+```markup
 <DAO address="0x">
   <Plugins from="DAO">
     <Plugin.Data>
@@ -489,11 +485,11 @@ from?: "DAO"
 
 ### Proposals
 
-```ts
+```typescript
 from?: "DAO" | "Member as proposer"
 ```
 
-```html
+```markup
 <Member address="0x">
   <Proposals from="Member as proposer">
     <Proposal.Data>
@@ -503,13 +499,11 @@ from?: "DAO" | "Member as proposer"
 </Member>
 ```
 
----
-
 ## useComponent
 
-As you previously saw, to get the information (`Data` and `Entity`) from every component we need to do, for example with Member:
+As you previously saw, to get the information \(`Data` and `Entity`\) from every component we need to do, for example with Member:
 
-```html
+```markup
 <Member address="0x" dao="0x">
   <Member.Data>
     {(member: MemberData) =>
@@ -519,7 +513,7 @@ As you previously saw, to get the information (`Data` and `Entity`) from every c
 </Member>
 ```
 
-But the library also allows you to do, (this is available for every component of the library):
+But the library also allows you to do, \(this is available for every component of the library\):
 
 ```jsx
 const MyMemberComponent = () => {
@@ -534,3 +528,4 @@ const MyMemberComponent = () => {
 Note that you MUST implement the component that has the `useXXX` INSIDE of the component you want to get the data and/or from. Also, you must use the `?` when interacting with the hook because it can be undefined.
 
 [Click here](https://github.com/dOrgTech/arc.react-demo/blob/dev/src/components/Proposals/Create.tsx#L20) to check an example
+
